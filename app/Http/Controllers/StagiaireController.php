@@ -48,7 +48,7 @@ class StagiaireController extends Controller
                 return  response()->json('you success',200);
             } */
             if($request['password']==$stglog['Password']){
-                return  response()->json('you success',200);
+                return  response()->json(['msg'=>'success',$stglog],200);
             }
 
     }
