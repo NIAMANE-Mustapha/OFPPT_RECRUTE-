@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Stagiaire;
 use App\Models\Stg;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class StagiaireController extends Controller
@@ -38,19 +39,67 @@ class StagiaireController extends Controller
               return $newstg ;
 
     }
-    public function login(Request $request){
+    public function login(Request $request)
+    {
+        $data=$request->validate([
+            'email'=>'required|email',
+            'password'=>'required',
+        ]);
+        $user=Stagiaire::where('OFPPTMail',$data['email'])->first();
+        if(!$user){
+            return response()->json(['msg'=>'email not found'],401);
+        }
+        if($user['Password']==$data['password']){
+            $token=$user->createToken('main')->plainTextToken;
+            return response()->json([
+                'stg'=>$user,
+                'token'=>$token,
+            ]);
+        }else {
+            return response()->json([
+                'msg'=>'mot de passe incorrecte',
+            ]);
+        }
+    }
 
-            $stglog=Stagiaire::where('OFPPTMail', $request['email'])->first();
-            if(!$stglog){
-                return response()->json('email not found',201);
-            }
-            /* if(Hash::check($request['password'])==$stglog['Password']){
-                return  response()->json('you success',200);
-            } */
-            if($request['password']==$stglog['Password']){
-                return  response()->json(['msg'=>'success',$stglog],200);
-            }
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Stagiaire $stagiaire)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request)
+    {
+        $stagiaire=Auth::user();
+        if(!$stagiaire){
+            return response()->json(['msg'=>'non connecté']);
+        }
+
+        $validated=$request->validate([
+            'Phone'=>'nullable|string|min:1|max:15',
+            'Adresse'=>'nullable|string|max:40',
+            'Profile'=>'nullable|string|max:255',
+            'Photo'=>'nullable',
+        ]);
+
+        $stagiaire->update($validated);
+        return response()->json([
+            'stg'=>$stagiaire,
+            'msg'=>'profile est modifié',
+        ],200);
 
     }
 
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Stagiaire $stagiaire)
+    {
+        //
+    }
 }

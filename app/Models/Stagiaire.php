@@ -4,10 +4,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Sanctum\HasApiTokens;
 
 class Stagiaire extends Model
 {
-    use HasFactory;
+    use HasFactory,HasApiTokens;
 
     // Define fillable attributes for mass assignment
     protected $fillable = [
@@ -17,7 +18,10 @@ class Stagiaire extends Model
         'CIN',
         'Phone',
         'Ville',
-        'Adresse'
+        'Adresse',
+        'Photo',
+        'CV',
+        'Profile',
     ];
     //
 }

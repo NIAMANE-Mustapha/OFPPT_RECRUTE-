@@ -52,10 +52,19 @@ class ENtrepriseController extends Controller
         /* if(Hash::check($request['password'])==$stglog['Password']){
             return  response()->json('you success',200);
         } */
-        if($request['password']==$entlog['Password']){
-            return  response()->json(['msg'=>'success',$entlog],200);
+        if($request['password']!=$entlog['Password']){
+            return  response()->json(['msg'=>'not success',$entlog],200);
         }
+        if($entlog['Password']==$request['password']){
+            $token=$entlog->createToken('main')->plainTextToken;
+            return response()->json([
+                'entlog'=>$entlog,
+                'token'=>$token,
+            ]);
+        }
+    }
+
 
 }
 
-}
+
