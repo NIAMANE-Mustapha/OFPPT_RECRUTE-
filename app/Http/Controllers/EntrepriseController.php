@@ -63,6 +63,10 @@ class ENtrepriseController extends Controller
             ]);
         }
     }
+    public function entrepriseOffre(Request $request){
+       $myoffres=Entreprise::where('Identifiant',$request['Identifiant'])->first()->offres;
+       return response()->json($myoffres);
+    }
 
 
 }

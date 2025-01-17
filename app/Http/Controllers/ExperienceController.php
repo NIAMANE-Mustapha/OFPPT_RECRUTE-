@@ -31,7 +31,16 @@ class ExperienceController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        $data=$request;
+        Experience::create([
+            'CIN'=>$data['cin'],
+            'Titre'=>$data['titre'],
+            'Duree'=>$data['duree'],
+            'Mission'=>$data['mission'],
+            'EntrepriseName'=>$data['entreprise'],
+            'File'=>$data['certificat'],
+        ]);
+        return response()->json('Experience Ajouté est ajouté',200);
     }
 
     /**

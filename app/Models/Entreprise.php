@@ -23,4 +23,7 @@ class Entreprise extends Model
         'Secteur',
         'NbEmployer',
     ];
+    public function offres(){
+        return $this->hasMany(Offre::class,'EntrepriseId','Identifiant');
+    }
 }

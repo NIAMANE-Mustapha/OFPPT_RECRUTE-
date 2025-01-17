@@ -75,24 +75,31 @@ class StagiaireController extends Controller
      */
     public function update(Request $request)
     {
-        $stagiaire=Auth::user();
-        if(!$stagiaire){
-            return response()->json(['msg'=>'non connecté']);
+        $stagiaire = Auth::user();
+        if (!$stagiaire) {
+            return response()->json(['msg' => 'Non connecté'], 401);
         }
 
-        $validated=$request->validate([
-            'Phone'=>'nullable|string|min:1|max:15',
-            'Adresse'=>'nullable|string|max:40',
-            'Profile'=>'nullable|string|max:255',
-            'Photo'=>'nullable',
+        $validated = $request->validate([
+            'Phone' => 'nullable|string|min:1|max:15',
+            'Adresse' => 'nullable|string|max:40',
+            'Profile' => 'nullable|string',
+            'Photo' => 'nullable', // Validate Photo as an image
         ]);
 
-        $stagiaire->update($validated);
-        return response()->json([
-            'stg'=>$stagiaire,
-            'msg'=>'profile est modifié',
-        ],200);
+        // Handle file upload for Photo if provided
+        if ($request->hasFile('Photo')) {
+            $photoPath = $request->file('Photo')->store('profile_photos', 'public'); // Store in 'public/profile_photos'
+            $validated['Photo'] = $photoPath; // Update validated data with the file path
+        }
 
+        // Update the user's information
+        $stagiaire->update($validated);
+
+        return response()->json([
+            'stg' => $stagiaire,
+            'msg' => 'Profil est modifié',
+        ], 200);
     }
 
     /**
@@ -101,5 +108,31 @@ class StagiaireController extends Controller
     public function destroy(Stagiaire $stagiaire)
     {
         //
+    }
+    public function showLangues(Request $request)
+    {
+        $langues=Stagiaire::find($request['id'])->langues;
+        return response()->json($langues,200);
+    }
+    public function showDiplomes(Request $request)
+    {
+        $diplomes=Stagiaire::find($request['id'])->diplomes;
+        return response()->json($diplomes,200);
+    }
+    public function showExperience(Request $request)
+    {
+        $experience=Stagiaire::find($request['id'])->experiences;
+        return response()->json($experience,200);
+    }
+    
+    public function candidaturesWithOffres(Request $request)
+    {
+        $stagiaire = Stagiaire::with(['candidatures.offre'])->where('CIN', $request['cin'])->first();
+
+        if (!$stagiaire) {
+            return response()->json(['error' => 'Stagiaire non trouvé'], 404);
+        }
+
+        return response()->json($stagiaire, 200);
     }
 }

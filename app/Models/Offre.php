@@ -12,8 +12,10 @@ class Offre extends Model
         'Niveau',
         'SecteurId',
         'Ville',
+        'OffreId',
         'Pays',
         'Post',
+        'Deadline',
         'Description',
         'Experience',
         'Annoncement',
@@ -21,4 +23,7 @@ class Offre extends Model
         'NomEntreprise',
         'EntrepriseId',
     ];
+    public function candidature(){
+        return $this->hasMany(Candidature::class,'OffreId','OffreId');
+    }
 }

@@ -24,6 +24,8 @@ class OffreController extends Controller
             'contract' => 'required',
             'dateexp' => 'required',
             'EntrepriseId' => 'required',
+            'NomEntreprise' => 'required',
+            'Annoncement' => 'required',
         ]);
 
         // Create the Offre record using mass assignment
@@ -37,10 +39,17 @@ class OffreController extends Controller
             'diplomeid' => $validated['diplome'],
             'Experience' => $validated['experience'],
             'Ville' => $validated['ville'],
-            'Contract' => $validated['contract'],
+            'NomEntreprise' => $validated['NomEntreprise'],
+            'Type' => $validated['contract'],
             'Deadline' => $validated['dateexp'],
+            'Annoncement' => $validated['Annoncement'],
         ]);
               return $newoffre ;
 
     }
+    public function candidature(Request $request){
+        $offre=Offre::with(['candidature.stagiaire'])->where('OffreId',$request['OffreId'])->first()->candidature;
+        dd($offre);
+    }
 }
+
