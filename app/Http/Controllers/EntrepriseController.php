@@ -67,6 +67,12 @@ class ENtrepriseController extends Controller
        $myoffres=Entreprise::where('Identifiant',$request['Identifiant'])->first()->offres;
        return response()->json($myoffres);
     }
+    public function showResponsable(Request $request)
+    {
+        $experience=Entreprise::where('Identifiant',$request['id'])->first()->responsable;
+        return response()->json($experience,200);
+    }
+
 
 
 }

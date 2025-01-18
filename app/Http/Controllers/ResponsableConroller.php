@@ -16,6 +16,7 @@ class ResponsableConroller extends Controller
             'responsableFixe' => 'required',
             'responsableMobile' => 'required',
             'ResponsableId'=>'required',
+            'EntrepriseId'=>'required'
         ]);
         $newresponsable = Responsable::create([
             'ResponsableName' => $validated['responsableName'],
@@ -25,6 +26,7 @@ class ResponsableConroller extends Controller
             'ResponsableFixe' => ($validated['responsableFixe']),
             'ResponsableLinkedIn' => $validated['responsableLinkedIn'],
             'ResponsableId' => $validated['ResponsableId'],
+            'EntrepriseId' => $validated['EntrepriseId']
 
         ]);
               return $newresponsable ;

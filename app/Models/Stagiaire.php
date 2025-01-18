@@ -10,7 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 class Stagiaire extends Model
 {
     use HasFactory, Notifiable,HasApiTokens;
-    protected $fillable=['CIN','StagiaireName','Ville','Adresse','Phone','OFPPTMail','Password','Photo','Profile','CV'];
+    protected $fillable=['CIN','StagiaireName','Ville','Adresse','Phone','OFPPTMail','Password','Photo','Profile','CV','MotivationLetter'];
 
     public function candidatures(){
         return $this->hasMany(Candidature::class,'CIN','CIN');

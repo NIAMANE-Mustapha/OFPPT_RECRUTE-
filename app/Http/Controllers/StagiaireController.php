@@ -7,6 +7,7 @@ use App\Models\Stg;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Pail\Files;
 
 class StagiaireController extends Controller
 {
@@ -102,6 +103,24 @@ class StagiaireController extends Controller
         ], 200);
     }
 
+    public function updatecvletter(Request $request){
+        $stagiaire = Auth::user();
+
+        $validated = $request->validate([
+            'MotivationLetter' => 'required',
+            'CV' => 'required',
+        ]);
+        // Handle file upload for Photo if provided
+        // Update the user's information
+        $stagiaire->update($validated);
+
+        return response()->json([
+            'stg' => $stagiaire,
+            'msg' => 'pieces est modifié',
+        ], 200);
+
+    }
+
     /**
      * Remove the specified resource from storage.
      */
@@ -109,22 +128,25 @@ class StagiaireController extends Controller
     {
         //
     }
+
     public function showLangues(Request $request)
     {
         $langues=Stagiaire::find($request['id'])->langues;
         return response()->json($langues,200);
     }
+
     public function showDiplomes(Request $request)
     {
         $diplomes=Stagiaire::find($request['id'])->diplomes;
         return response()->json($diplomes,200);
     }
+
     public function showExperience(Request $request)
     {
         $experience=Stagiaire::find($request['id'])->experiences;
         return response()->json($experience,200);
     }
-    
+
     public function candidaturesWithOffres(Request $request)
     {
         $stagiaire = Stagiaire::with(['candidatures.offre'])->where('CIN', $request['cin'])->first();

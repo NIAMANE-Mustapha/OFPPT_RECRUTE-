@@ -8,6 +8,8 @@ class Responsable extends Model
 {
     protected $fillable = [
         'ResponsableName',
+        'EntrepriseId',
+        'ResponsableId',
         'ResponsableMail',
         'ResponsableCivilite',
         'ResponsableFonction',

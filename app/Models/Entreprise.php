@@ -13,6 +13,7 @@ class Entreprise extends Model
         'TypeIdentifiant',
         'Identifiant',
         'E_Name',
+        'ResponsableId',
         'Email',
         'Adresse',
         'Password',
@@ -25,5 +26,9 @@ class Entreprise extends Model
     ];
     public function offres(){
         return $this->hasMany(Offre::class,'EntrepriseId','Identifiant');
+    }
+    public function responsable(){
+        return $this->hasOne(Responsable::class,'EntrepriseId','Identifiant');
+
     }
 }

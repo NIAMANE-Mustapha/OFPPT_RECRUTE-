@@ -12,7 +12,7 @@ class Experience extends Model
         'Mission',
         'File',
         'EntrepriseName',
-        'CIN ',
+        'CIN',
     ];
 
 

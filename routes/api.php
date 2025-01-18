@@ -1,13 +1,17 @@
 <?php
 
 use App\Http\Controllers\CandidatureController;
+use App\Http\Controllers\CompetenceController;
 use App\Http\Controllers\EntrepriseController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\OffreController;
 use App\Http\Controllers\ResponsableConroller;
 use App\Http\Controllers\StagiaireController;
 use App\Http\Controllers\DiplomeController;
+use App\Http\Controllers\FilierController;
 use App\Http\Controllers\LangueController;
+use App\Http\Controllers\LevelController;
+use App\Http\Controllers\SecteurController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -43,8 +47,16 @@ Route::get('/offredetail/{OffreId}', [OffreController::class, 'Offredetail']);
 Route::post('/register', [StagiaireController::class, 'store']);
 Route::post('/login', [StagiaireController::class, 'login']);
 Route::middleware('auth:sanctum')->put('/update', [StagiaireController::class, 'update']);
+Route::middleware('auth:sanctum')->put('/updatecvletter', [StagiaireController::class, 'updatecvletter']);
 
 Route::post('/registerEntreprise', [EntrepriseController::class, 'store']);
 Route::post('/loginEntreprise', [EntrepriseController::class, 'login']);
+
+
+Route::post('/showResponsable', [EntrepriseController::class, 'showResponsable']);
+Route::get('/showSecteurs', [SecteurController::class, 'show']);
+Route::get('/showLevels', [LevelController::class, 'show']);
+Route::get('/showfiliers', [FilierController::class, 'show']);
+Route::get('/showCompetences', [CompetenceController::class, 'show']);
 
 
