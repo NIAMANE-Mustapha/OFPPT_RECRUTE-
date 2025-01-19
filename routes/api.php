@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
+Route::get('/showstg',[StagiaireController::class,"show"] );
 Route::get('/showoffre',[OffreController::class,"show"] );
 Route::post('/candidatures', [StagiaireController::class,'candidaturesWithOffres']);
 Route::post('/showlangues', [StagiaireController::class,'showLangues']);

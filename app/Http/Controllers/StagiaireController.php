@@ -12,8 +12,8 @@ use Laravel\Pail\Files;
 class StagiaireController extends Controller
 {
     public function show(){
-        $allatg=Stagiaire::all();
-        return $allatg->toJson();
+        $allStagiaires = Stagiaire::with('diplomes')->get();
+        return $allStagiaires->toJson();
     }
 
     public function store(Request $request){
@@ -157,4 +157,7 @@ class StagiaireController extends Controller
 
         return response()->json($stagiaire, 200);
     }
+
+
+
 }

@@ -23,6 +23,7 @@ class DiplomeController extends Controller
             'Etablissement'=>$data['etab'],
             'AnneeDiplome'=>$data['anne'],
             'Mention'=>$data['mention'],
+            'SecteurID'=>$data['SecteurID']
         ]);
         return response()->json('diplome est ajouté',200);
     }

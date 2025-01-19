@@ -22,7 +22,7 @@ class Stagiaire extends Model
 
     public function diplomes()  {
         return $this->hasMany(Diplome::class,'CIN','CIN');
-    }
+    }   
 
     public function experiences()  {
         return $this->hasMany(Experience::class,'CIN','CIN');
