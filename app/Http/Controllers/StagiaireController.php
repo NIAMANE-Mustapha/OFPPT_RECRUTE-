@@ -12,19 +12,29 @@ use Laravel\Pail\Files;
 class StagiaireController extends Controller
 {
     public function show(){
-        $allStagiaires = Stagiaire::with('diplomes')->get();
+        $allStagiaires = Stagiaire::with(['diplomes','competences','experiences'])->get();
         return $allStagiaires->toJson();
+    }
+
+    public function showcompts(Request $request){
+        $compts=Stagiaire::where('CIN',$request['id'])->first()->competences;
+        return response()->json($compts,200);
     }
 
     public function store(Request $request){
         $validated = $request->validate([
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|regex:/^[a-zA-Z0-9._%+-]+@ofppt-edu\.ma$/',
             'adr' => 'required',
             'ville' => 'required',
             'phone' => 'required',
             'password' => 'required',
             'cin' => 'required',
+        ], [
+            'email.required' => 'Veuillez entrer une adresse email.',
+            'email.email' => 'Veuillez fournir une adresse email valide.',
+            'email.regex' => 'L\'adresse email doit se terminer par @ofppt-edu.ma.',
+            'password.required' => 'Veuillez entrer un mot de passe.',
         ]);
 
         // Create the Stagiaire record using mass assignment
@@ -42,26 +52,33 @@ class StagiaireController extends Controller
     }
     public function login(Request $request)
     {
-        $data=$request->validate([
-            'email'=>'required|email',
-            'password'=>'required',
+        // Validation des données avec messages d'erreur personnalisés
+        $data = $request->validate([
+            'email' => 'required',
+            'password' => 'required',
         ]);
-        $user=Stagiaire::where('OFPPTMail',$data['email'])->first();
-        if(!$user){
-            return response()->json(['msg'=>'email not found'],401);
+
+        // Recherche de l'utilisateur dans la base de données
+        $user = Stagiaire::where('OFPPTMail', $data['email'])->first();
+
+        if (!$user) {
+            return response()->json(['msg' => 'Adresse email introuvable.'], 401);
         }
-        if($user['Password']==$data['password']){
+
+        // Vérification du mot de passe
+        if(Hash::check($data['password'],$user['Password'])){
             $token=$user->createToken('main')->plainTextToken;
             return response()->json([
-                'stg'=>$user,
-                'token'=>$token,
+                'stg' => $user,
+                'token' => $token,
             ]);
-        }else {
+        } else {
             return response()->json([
-                'msg'=>'mot de passe incorrecte',
-            ]);
+                'msg' => 'Mot de passe incorrect.',
+            ], 401);
         }
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -156,6 +173,23 @@ class StagiaireController extends Controller
         }
 
         return response()->json($stagiaire, 200);
+    }
+
+    public function addCompetences(Request $request){
+        $stagiaire=Auth::user();
+        if(!$stagiaire){
+            return response()->json(['msg'=>'non connecté']);
+        }
+        $validated=$request->validate([
+            'competence'=>'required'
+        ]);
+
+        $currentCompetences = $validated['competence'];
+
+        $stagiaire->competences = $currentCompetences;
+        $stagiaire->save();
+
+        return response()->json(['msg'=>'competence est ajouté']);
     }
 
 

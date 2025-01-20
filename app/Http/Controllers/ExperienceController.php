@@ -33,6 +33,9 @@ class ExperienceController extends Controller
     {
         $data=$request;
         Experience::create([
+
+            'date_debut'=>$data['date_debut'],
+            'date_fin'=>$data['date_fin'],
             'CIN'=>$data['cin'],
             'Titre'=>$data['titre'],
             'Duree'=>$data['duree'],

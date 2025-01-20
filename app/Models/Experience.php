@@ -13,6 +13,8 @@ class Experience extends Model
         'File',
         'EntrepriseName',
         'CIN',
+        'date_fin',
+        'date_debut',
     ];
 
 

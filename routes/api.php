@@ -12,11 +12,14 @@ use App\Http\Controllers\FilierController;
 use App\Http\Controllers\LangueController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\SecteurController;
+use App\Http\Controllers\StgCompetenceController;
+
 use Illuminate\Support\Facades\Route;
 
 
 
-
+Route::middleware('auth:sanctum')->post('/addcompt', [StgCompetenceController::class,'store']);
+Route::post('/showcompt', [StagiaireController::class,'showcompts']);
 Route::get('/showstg',[StagiaireController::class,"show"] );
 Route::get('/showoffre',[OffreController::class,"show"] );
 Route::post('/candidatures', [StagiaireController::class,'candidaturesWithOffres']);
@@ -27,6 +30,7 @@ Route::post('/addoffre',[OffreController::class,"store"] );
 Route::post('/addcandidature',[CandidatureController::class,"store"] );
 Route::post('/entrepriseOffre',[EntrepriseController::class,"entrepriseOffre"] );
 Route::post('/registerResponsable',[ResponsableConroller::class,"store"] );
+Route::middleware('auth:sanctum')->put('/addcompt', [StagiaireController::class,'addCompetences']);
 
 Route::get('/offrecandidature',[OffreController::class,"candidature"] );
 
@@ -38,6 +42,7 @@ Route::middleware('auth:sanctum')->post('/addexperience', [ExperienceController:
 /* diplome */
 /* Route::get('/showDiplome', [DiplomeController::class,'show']); */
 Route::middleware('auth:sanctum')->post('/storeDiplome', [DiplomeController::class,'store']);
+Route::get('/showDiplome', [DiplomeController::class,'show']);
 
 /* langues */
 /* Route::get('/showLangue', [LangueController::class,'show']); */
