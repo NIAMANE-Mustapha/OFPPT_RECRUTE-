@@ -1,0 +1,29 @@
+Project Description
+This project involves the development of a digital platform designed to streamline the recruitment process for the OFPPT (Office de la Formation Professionnelle et de la Promotion du Travail). The platform aims to modernize and simplify the recruitment workflow for both job applicants and administrators by providing an efficient and user-friendly interface.
+
+Key Features
+Job Listings:
+
+Displays available job opportunities with detailed descriptions, qualifications required, and application deadlines.
+Applicant Portal:
+
+Allows users to create accounts, upload resumes, and submit applications for multiple positions.
+Enables users to track the status of their applications in real time.
+Admin Panel:
+
+Provides tools for managing job listings, reviewing applications, and shortlisting candidates.
+Includes automated notifications for interview scheduling and result announcements.
+Search and Filter Options:
+
+Applicants can easily search and filter job postings by categories such as location, job type, or required skills.
+Multilingual Support:
+
+The platform is designed to cater to a diverse user base by offering content in multiple languages (e.g., French and Arabic).
+Security Features:
+
+Implements robust security measures to protect user data and ensure compliance with data protection standards.
+Technologies Used
+Frontend: React.js (for dynamic and interactive user interfaces).
+Backend: Laravel (for robust and scalable backend services).
+Database: MySQL (to store user and job-related data securely).
+Version Control: Git for source code management.
