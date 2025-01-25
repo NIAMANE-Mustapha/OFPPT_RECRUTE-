@@ -1,0 +1,602 @@
+.entreprise-container {
+  width: 80%;
+  margin: auto;
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.entreprise-container .entreprise-links {
+  display: flex;
+  margin: 1%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #d3f1df; /* A deep blue background */
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.entreprise-container .entreprise-links a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bolder;
+  color: #000000; /* White text */
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.entreprise-container .entreprise-links a.active {
+  background-color: #54c392; /* Brighter blue for hover */
+  border-radius: 30px;
+  color: white !important; /* Slightly softer white */
+  font-weight: bold;
+}
+.entreprise-container .entreprise-links a:hover {
+  background-color: #73ec8b; /* Brighter blue for hover */
+  border-radius: 30px;
+  color: white; /* Slightly softer white */
+  transform: scale(1.1); /* Gentle zoom effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+.border {
+  border: 3px black solid;
+  width: fit-content;
+  padding: 0px 10px 0 10px;
+  border-radius: 20px;
+}
+.bold {
+  font-weight: bold;
+}
+
+.entreprise-container .entreprise-indetification {
+  padding: 10px;
+  display: flex;
+  margin: 30px;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-bottom: 4px solid #54c392;
+  border-radius: 10px;
+}
+.ofppt-v-logo {
+  opacity: 0.7;
+}
+
+.entreprise-container .entreprise-indetification img {
+  width: 150px;
+  height: auto;
+}
+
+.entreprise-container .entreprise-indetification .entreprise-details {
+  margin: 20px 0;
+}
+
+/* entreprise competence OFPPT */
+
+.entreprise-competence {
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 1em;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border-bottom: 4px solid #54c392;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.advanced-search-Entreprise,
+.secteur-search {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.advanced-search-Entreprise div,
+.secteur-search {
+  display: flex;
+  flex-direction: column;
+}
+
+.advanced-search-Entreprise label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5em;
+}
+
+.input-competence {
+  padding: 0.8em;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  font-size: 1rem;
+  height: 50px;
+  background-color: #fff;
+  outline: none;
+  width: 100% !important;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.input-competence:focus {
+  border-color: #54c392;
+}
+.input-competence {
+  font-style: italic;
+  color: #090000;
+}
+
+.searshed-lauriat h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
+  color: #0d0000;
+}
+
+.searshed-lauria p {
+  font-size: 1rem;
+  color: #190000;
+  line-height: 1.5;
+}
+
+/* entreprise laureat */
+
+.entreprise-container .entreprise-laureat {
+  border-radius: 10px;
+  border-bottom: 4px solid #54c392;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+}
+
+.entreprise-container .entreprise-laureat .secteur-search {
+  margin: 10px 0;
+}
+
+.entreprise-container .entreprise-laureat .secteur-search label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.entreprise-container .entreprise-laureat .secteur-search input {
+  padding: 5px;
+}
+
+.entreprise-container .entreprise-laureat .advanced-search {
+  margin: 10px 0;
+}
+
+.entreprise-container .entreprise-laureat .advanced-search div {
+  margin: 5px 0;
+}
+
+.entreprise-container .entreprise-laureat .advanced-search div label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.entreprise-container .entreprise-laureat .advanced-search div select {
+  padding: 5px;
+}
+
+.entreprise-container .entreprise-laureat .advanced-search article.profile {
+  padding: 10px;
+  border: 1px solid gainsboro;
+}
+
+.entreprise-container .entreprise-laureat .advanced-search article.profile img {
+  width: 100px;
+  height: 100px;
+}
+
+.entreprise-container .entreprise-laureat .advanced-search article.profile p {
+  margin: 5px;
+}
+.btns-entr {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cards {
+  display: flex;
+
+  gap: 15px;
+}
+
+.cards .red {
+  background-color: #020000;
+}
+
+.cards .blue {
+  background-color: #118b50;
+}
+
+.cards .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 40px;
+  width: 160px;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 700ms;
+}
+
+.cards .card p.tip {
+  font-weight: 700;
+  margin: auto;
+  font-size: 14px;
+}
+
+.cards .card:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.cards:hover > .card:not(:hover) {
+  transform: scale(0.9, 0.9);
+}
+/* entreprise offre */
+
+.entreprise-offre {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.entreprise-offre .sex-container {
+  display: flex;
+  gap: 10px;
+}
+
+.entreprise-offre h3,
+.entreprise-offre h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.entreprise-offre label {
+  font-weight: bold;
+  color: #555;
+}
+
+.entreprise-offre input[type="text"],
+.entreprise-offre input[type="Date"],
+.entreprise-offre select,
+.entreprise-offre textarea {
+  padding: 8px;
+  width: 100%;
+  font-size: 14px;
+  border: 1px solid #bfbfbf;
+  border-radius: 5px;
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.sex {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  flex-wrap: nowrap !important;
+}
+.entreprise-offre textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #12dd19;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: rgb(1, 29, 10);
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #010c07;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: #33e665;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
+
+.entreprise-offre .radio-group {
+  display: flex;
+  gap: 15px;
+  margin-left: 20px;
+  flex-wrap: nowrap !important;
+  width: 100%;
+}
+
+.entreprise-offre .radio-group label {
+  margin-right: 5px;
+}
+
+.input-files-entreprise {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex: 1 1 calc(33.33% - 20px); /* Each takes 33.33% width minus some gap */
+  margin: 10px; /* Optional spacing between elements */
+  box-sizing: border-box; /* Ensures padding and border are included in width */
+  font-family: "Segoe UI", sans-serif;
+}
+
+.input-files-entreprise .custom-file-label-entreprise {
+  display: inline-block;
+  background-color: #00873f; /* Primary button color */
+  color: white;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.custom-file-label:hover {
+  background-color: #4e31aa; /* Darker button color on hover */
+}
+
+#file-upload-entreprise {
+  display: none; /* Hide the default file input */
+}
+
+/* entreprise contact */
+.contact-entreprise {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  text-align: center;
+}
+.offre-type-div {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+/* Buttons styling */
+.offre-type-btn {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.offre-type-btn:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.offre-type-btn.active {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+.offre-type-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Active section container styling */
+.emploi,
+.stage {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  display: inline-block;
+  text-align: left;
+  width: 80%;
+}
+
+/* Candidate postulation text */
+.candidat-postule {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Article styling */
+.candidat-p {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+}
+
+.candidat-p img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 15px;
+  border: 2px solid #007bff;
+}
+
+.contact-p {
+  margin: 0 10px;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: #0f0303;
+}
+
+article a {
+  color: #007bff;
+  margin-right: 10px;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+article a:hover {
+  text-decoration: underline;
+}
+.stagiaireslist {
+    display: flex;
+    margin-top:20px;
+    border:rgb(154, 253, 194) 2px solid;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap:10px;
+}
+.stagiaireslist article{
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius:5px;
+    flex-basis:24%;
+    padding:10px;
+}
+.stgimg{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+}
+/* From Uiverse.io by SteveBloX */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+
+  .ball {
+    --size: 16px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 11px;
+    margin: 0 10px;
+
+    animation: 2s bounce ease infinite;
+  }
+
+  .blue {
+    background-color: #4285f5;
+  }
+
+  .red {
+    background-color: #ea4436;
+    animation-delay: 0.25s;
+  }
+
+  .yellow {
+    background-color: #fbbd06;
+    animation-delay: 0.5s;
+  }
+
+  .green {
+    background-color: #34a952;
+    animation-delay: 0.75s;
+  }
+
+  @keyframes bounce {
+    50% {
+      transform: translateY(25px);
+    }
+  }
+
+/* From Uiverse.io by mi-series */
+.btnd {
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #40B3A2;
+    min-width: 100px;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+    padding: 16px 20px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .btnd:hover {
+    opacity: .95;
+  }
+
+  .btnd .animation {
+    border-radius: 100%;
+    animation: ripple 0.6s linear infinite;
+  }
+
+  @keyframes ripple {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+      box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+    }
+  }

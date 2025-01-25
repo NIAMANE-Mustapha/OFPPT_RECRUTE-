@@ -1,0 +1,704 @@
+.laureat-container {
+  width: 80%;
+  margin: auto;
+  position: relative;
+  padding-bottom: 30px;
+}
+.profile-container {
+  display: flex;
+  max-width: 99%;
+  gap: 5px;
+  align-content: center;
+  justify-content: center;
+}
+.profile-links {
+  display: flex;
+  flex-direction: column; /* Ensures vertical layout */
+  width: 20%;
+  justify-content: center;
+  align-content: center;
+  gap: 10px; /* Adjusted for cleaner spacing */
+  border-radius: 8px; /* Adds rounded corners for a modern look */
+  padding: 10px; /* Adds inner spacing */
+  background-color: #cedbff; /* Light background for better contrast */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  align-items: stretch; /* Ensures links take full width */
+}
+
+.profile-links a {
+  text-decoration: none; /* Removes underline from links */
+  color: #000205; /* Matches the border color */
+  font-size: 16px; /* Adjusts font size for readability */
+  padding: 10px 15px; /* Adds padding for clickable area */
+  border: 1px solid transparent; /* Transparent border for hover effect */
+  border-radius: 4px; /* Matches overall rounded style */
+  text-align: center;
+  font-weight: bold; /* Centers text */
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.profile-links a:hover {
+  background-color: #5329cf; /* Brighter blue for hover */
+  border-radius: 30px;
+  color: #00080f; /* Slightly softer white */
+  transform: scale(1.1); /* Gentle zoom effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+.profile-links a.active {
+  background-color: #217aff; /* Brighter blue for hover */
+  border-radius: 30px;
+  color: #000101 !important; /* Slightly softer white */
+  font-weight: bold;
+}
+
+.title {
+  z-index: 3;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  width: 30%;
+  margin-left: 40px;
+  top: 420px;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bolder;
+  font-size: larger;
+  padding: 15px 0 15px 10px;
+}
+
+.laureat-container .title p {
+  margin: 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+.laureat-container .laureat-links {
+  display: flex;
+  margin: 1%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #cedbff; /* A deep blue background */
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.laureat-container .laureat-links a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bolder;
+  color: #000000; /* White text */
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.laureat-container .laureat-links a:hover {
+  background-color: #5329cf; /* Brighter blue for hover */
+  border-radius: 30px;
+  color: #00080f; /* Slightly softer white */
+  transform: scale(1.1); /* Gentle zoom effect */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.laureat-container .laureat-links a.active {
+  background-color: #217aff; /* Brighter blue for hover */
+  border-radius: 30px;
+  color: #000101 !important; /* Slightly softer white */
+  font-weight: bold;
+}
+
+.laureat-container .laureat-profil {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 80%;
+  border-radius: 10px;
+  padding-bottom: 30px;
+  border-bottom: 4px solid #217aff;
+}
+.laureat-profil input {
+  border: 1px #5329cf solid;
+  border-radius: 10px;
+}
+.laureat-profil textarea {
+  border: 1px solid #5329cf; /* Ensures a consistent border style */
+  border-radius: 10px; /* Smooth rounded corners */
+  padding: 10px; /* Adds inner spacing for comfortable typing */
+  font-size: 16px; /* Increases readability */
+  font-family: Arial, sans-serif; /* Ensures consistent typography */
+  color: #333; /* Sets a neutral text color */
+  outline: none; /* Removes the default outline */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds subtle shadow for depth */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover and focus effect */
+}
+
+.laureat-profil textarea:focus {
+  border-color: #6a3bcf; /* Slightly darker border on focus */
+  box-shadow: 0 0 6px rgba(83, 41, 207, 0.5); /* Glow effect on focus */
+}
+.description-profile {
+  width: 100%;
+}
+
+.photo_container {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+.modify-btn {
+  background-color: #217aff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 30px;
+  font-weight: bold;
+}
+.diplomes-profile {
+  border-radius: 10px;
+  width: 80%;
+  padding: 20px;
+  border-bottom: 4px solid #217aff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.experience-profile {
+  border-radius: 10px;
+  width: 80%;
+  padding: 20px;
+  border-bottom: 4px solid #217aff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+}
+.laureat-profil-infos {
+}
+.laureat-profil-infos .icons {
+  display: flex;
+  margin-left: 10px;
+  gap: 0px;
+  flex-direction: column;
+}
+
+.laureat-profil-infos .icons div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  margin: 5px;
+}
+.laureat-profil-infos .icons div p {
+  margin-bottom: auto;
+  text-align: center;
+}
+
+.edit-icon:hover {
+  cursor: pointer;
+  scale: 1.1;
+  color: orange;
+  transition: 0.9s;
+}
+/* Laureat Experience */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px auto;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  background: #009fbd;
+  color: #fff;
+}
+
+thead th {
+  padding: 15px;
+  text-align: left;
+  font-weight: bold;
+}
+
+tbody td {
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:hover {
+  background: #f1f1f1;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Laureat Diplome */
+
+/* Laureat Langues */
+
+.laureat-langues {
+  border-bottom: 4px solid #217aff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  width: 80%;
+  border-radius: 10px;
+}
+.langue-p {
+  margin-top: 10px;
+}
+.circle-langues {
+  color: #217aff;
+  margin-left: 2px;
+}
+
+.laureat-langues .langues {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.laureat-langues input {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #555;
+  outline: none;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.laureat-langues label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.laureat-langues h4 {
+  cursor: pointer;
+  font-size: large;
+}
+
+.laureat-langues form {
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.laureat-langues form button {
+  padding: 5px;
+  margin: 5px 0;
+  background: #252525;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*Laureat Offre */
+
+.laureat-offre form {
+  padding: 20px;
+  border: 1px solid #252525;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  align-items: start;
+}
+
+.laureat-offre form div {
+  flex-basis: 32%;
+  margin-bottom: 20px;
+}
+
+.laureat-offre form div input {
+  display: block;
+  width: 90%;
+}
+
+.laureat-offre form div select {
+  display: block;
+  width: 90%;
+  padding: 2px 0;
+}
+
+.laureat-offre .advanced-search {
+  color: blue;
+  border: none;
+  background: #fff;
+  margin-right: 5px;
+  padding: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.laureat-offre .submit-search {
+  color: #fff;
+  background: blue;
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.laureat-offre p:nth-child(3) {
+  background: #252525;
+  padding: 10px 5px;
+  margin: 0 0 20px 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+.laureat-offre a {
+  color: blue;
+}
+.jobs-list-container {
+  border-bottom: 4px solid #217aff;
+  border-radius: 10px;
+}
+
+.jobs-list-container h3 {
+  color: white;
+  border-radius: 10px;
+
+  background-color: #001d23;
+  font-size: x-large;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.text-align-end {
+  text-align: end;
+  margin: auto;
+}
+
+/* .details {
+    text-align: center;
+    margin: auto;
+  }
+  .details:hover {
+    cursor: pointer;
+  }
+   */
+
+@media (max-width: 580px) {
+  .laureat-container {
+    width: 100%;
+    padding: 5px;
+  }
+  .laureat-links {
+    display: block !important;
+    & a {
+      display: block;
+      margin: 5px 0;
+    }
+  }
+  .laureat-profil {
+    display: inline-block !important;
+  }
+  .laureat-offre form {
+    display: block !important;
+  }
+}
+.experience-profile form {
+  margin-top: 10px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+}
+
+.experience-profile form div:nth-child(1) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.input {
+  max-width: 200px;
+  background-color: #f5f5f5;
+  color: #242424;
+  padding: 0.15rem 0.5rem;
+  min-height: 40px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  line-height: 1.15;
+  box-shadow: 0px 10px 20px -18px;
+}
+
+input:focus {
+  border-bottom: 2px solid #5b5fc7;
+  border-radius: 4px 4px 2px 2px;
+}
+
+input:hover {
+  outline: 1px solid lightgrey;
+}
+
+select {
+  background-color: #f5f5f5;
+  border: thin solid #252525;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select.minimal {
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+select.minimal:focus {
+  background-image: linear-gradient(45deg, green 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, green 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: green;
+  outline: 0;
+}
+
+textarea {
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  background: #f5f5f5;
+}
+
+.container-btn-file {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-color: #035574;
+  color: #fff;
+  border-style: none;
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 4px 8px 10px -3px rgba(0, 0, 0, 0.356);
+  transition: all 250ms;
+}
+.container-btn-file input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.container-btn-file > svg {
+  margin-right: 1em;
+}
+.container-btn-file::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  border-radius: 0.5em;
+  background-color: #202498;
+  z-index: -1;
+  transition: all 350ms;
+}
+.container-btn-file:hover::before {
+  width: 100%;
+}
+
+.submit-button {
+  width: 60%;
+  height: 40px;
+  display: block;
+  color: #fff;
+  background: #1b1833;
+  font-size: 1em;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+}
+
+.showform-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #034f9b;
+  background-color: #131390;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 5px;
+  border-radius: 5px;
+}
+.diplomes-profile form {
+  margin-top: 10px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.diplomes-profile form div:nth-child(1) {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+.laureat-langues form {
+  margin-top: 10px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+}
+.fichier-certification {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+
+.allpices {
+  border-radius: 10px;
+  width: 80%;
+  border-bottom: 4px solid #217aff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+.showpieces {
+  text-align: center;
+}
+.documentsList {
+  display: flex;
+  gap: 20px;
+}
+.singledoc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* From Uiverse.io by vinodjangid07 */
+.Documents-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: fit-content;
+  height: 45px;
+  border: none;
+  padding: 0px 15px;
+  border-radius: 5px;
+  background-color: rgb(49, 49, 83);
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.folderContainer {
+  width: 40px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+.fileBack {
+  z-index: 1;
+  width: 80%;
+  height: auto;
+}
+.filePage {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  z-index: 2;
+  transition: all 0.3s ease-out;
+}
+.fileFront {
+  width: 85%;
+  height: auto;
+  position: absolute;
+  z-index: 3;
+  opacity: 0.95;
+  transform-origin: bottom;
+  transition: all 0.3s ease-out;
+}
+.text {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.Documents-btn:hover .filePage {
+  transform: translateY(-5px);
+}
+.Documents-btn:hover {
+  background-color: rgb(58, 58, 94);
+}
+.Documents-btn:active {
+  transform: scale(0.95);
+}
+.Documents-btn:hover .fileFront {
+  transform: rotateX(30deg);
+}
+.competence-container {
+  width: 80%;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 10px;
+  border-bottom: 4px solid #217aff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+.comptence{
+    background-color:#217aff ;
+    margin:5px;
+    padding: 10px;
+    border-radius: 10px;
+    color:  white;
+}

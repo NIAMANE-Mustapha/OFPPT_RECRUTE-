@@ -1,0 +1,85 @@
+
+.container-2{
+    width:100% !important;
+    height:500px;
+    background-repeat: no-repeat !important;
+    background-size: cover;
+    border-bottom:2px solid black;
+
+}
+
+.nav-container{
+    display:flex;
+    width:80%;
+    margin: auto;
+    justify-content:space-between;
+    background-color:rgba(0, 0, 0, 0.4);
+}
+.navlist{
+    display: flex;
+    list-style-type: none;
+    gap:40px;
+    margin-bottom:0px;
+    align-items:center;
+    background-color: aliceblue;
+    padding:25px;
+    border-radius:3px 4px 0 0;
+}
+.navlist li{
+    margin-bottom:0px;
+
+}
+.ofppt-logo{
+    width:100px;
+    height:100px;
+    margin-left:20px;
+    cursor: pointer;
+}
+.first-nav{
+    margin-bottom:0px;
+}
+.langue a{
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+}
+.langue-container{
+    display: flex;
+    justify-content: space-between;
+    gap:3px;
+    margin-right:4px;
+}
+
+.first-links{
+    display: flex;
+    justify-content: space-between;
+    gap:20px;
+}
+.first-links a{
+    color: aliceblue;
+
+}
+.langue{
+    display:flex;
+    justify-content: space-between;
+    gap:3px;
+}
+.orange{
+    color: orange;
+    font-weight:bold;
+    font-family: Georgia, serif;
+}
+.bluen{
+    color: #1470fb;
+    font-weight:bold;
+    font-family: Georgia, serif;
+}
+.greenn{
+    color:#35d400;
+    font-weight:bold;
+    font-family: Georgia, serif;
+}
+.black{
+    color: #252525;
+    font-weight:bold;
+    font-family: Georgia, serif;
+}
