@@ -11,7 +11,8 @@ class Candidature extends Model
     public function offre(){
         return $this->belongsTo(Offre::class,'OffreId','OffreId');
     }
+
     public function stagiaire(){
-        return $this->belongsTo(Stagiaire::class,'CIN','CIN');
+        return $this->hasOne(Stagiaire::class,'CIN','CIN');
     }
 }

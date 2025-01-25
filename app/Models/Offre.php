@@ -23,7 +23,7 @@ class Offre extends Model
         'NomEntreprise',
         'EntrepriseId',
     ];
-    public function candidature(){
+    public function candidatures(){
         return $this->hasMany(Candidature::class,'OffreId','OffreId');
     }
 }

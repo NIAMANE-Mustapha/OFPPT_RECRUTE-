@@ -33,7 +33,7 @@ Route::post('/registerResponsable',[ResponsableConroller::class,"store"] );
 Route::middleware('auth:sanctum')->put('/addcompt', [StagiaireController::class,'addCompetences']);
 
 Route::get('/offrecandidature',[OffreController::class,"candidature"] );
-
+Route::post('/offresWithLaureat', [OffreController::class, 'offresWithLaureat']);
 /* experience */
 
 /* Route::get('/show', [ExperienceController::class,'show']); */
@@ -63,5 +63,6 @@ Route::get('/showSecteurs', [SecteurController::class, 'show']);
 Route::get('/showLevels', [LevelController::class, 'show']);
 Route::get('/showfiliers', [FilierController::class, 'show']);
 Route::get('/showCompetences', [CompetenceController::class, 'show']);
+
 
 

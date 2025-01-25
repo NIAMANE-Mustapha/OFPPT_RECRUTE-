@@ -51,5 +51,15 @@ class OffreController extends Controller
         $offre=Offre::with(['candidature.stagiaire'])->where('OffreId',$request['OffreId'])->first()->candidature;
         dd($offre);
     }
+    public function offresWithLaureat(Request $request)
+    {
+        $stagiaire = Offre::with(['candidatures.stagiaire'])->where('OffreId', $request['id'])->first();
+
+        if (!$stagiaire) {
+            return response()->json(['error' => 'Stagiaire non trouvé'], 404);
+        }
+
+        return response()->json($stagiaire, 200);
+    }
 }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Entreprise;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ENtrepriseController extends Controller
 {
@@ -19,7 +20,6 @@ class ENtrepriseController extends Controller
             'password' => 'required',
             'nbEmployer' => 'required',
             'siteInternet'=>'required',
-            'logo'=>'required',
             'email'=>'required',
             'ResponsableId'=>'required',
         ]);
@@ -32,7 +32,7 @@ class ENtrepriseController extends Controller
             'Email' => $validated['email'],
             'Adresse' => $validated['adresse'],
             'Password' => bcrypt($validated['password']),
-            'Logo' => $validated['logo'],
+            'Logo' => $request['logo'],
             'SiteInternet' => $validated['siteInternet'],
             'Ville' => $validated['ville'],
             'Pays' => $validated['pays'],
@@ -49,19 +49,23 @@ class ENtrepriseController extends Controller
         if(!$entlog){
             return response()->json('email not found',201);
         }
-        /* if(Hash::check($request['password'])==$stglog['Password']){
-            return  response()->json('you success',200);
-        } */
-        if($request['password']!=$entlog['Password']){
-            return  response()->json(['msg'=>'not success',$entlog],200);
-        }
-        if($entlog['Password']==$request['password']){
+        if(Hash::check($request['password'],$entlog['Password'])){
             $token=$entlog->createToken('main')->plainTextToken;
             return response()->json([
                 'entlog'=>$entlog,
                 'token'=>$token,
             ]);
         }
+        /* if($request['password']!=$entlog['Password']){
+            return  response()->json(['msg'=>'not success',$entlog],200);
+        } */
+        /* if($entlog['Password']==$request['password']){
+            $token=$entlog->createToken('main')->plainTextToken;
+            return response()->json([
+                'entlog'=>$entlog,
+                'token'=>$token,
+            ]);
+        } */
     }
     public function entrepriseOffre(Request $request){
        $myoffres=Entreprise::where('Identifiant',$request['Identifiant'])->first()->offres;
